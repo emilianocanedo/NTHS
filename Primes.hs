@@ -1,5 +1,10 @@
+module Primes
+(isPrime)
+where
+import Factorization (isDivisor)
+
 minorDivisorFrom :: Integer -> Integer -> Integer
-minorDivisorFrom n k | mod n k == 0 = k
+minorDivisorFrom n k | isDivisor n k = k
                      | otherwise = minorDivisorFrom n (k+1)
 
 minorDivisor :: Integer -> Integer
